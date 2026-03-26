@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🔗 CONEXÃO (depois você troca pela do Atlas)
-mongoose.connect('mongodb+srv://mongodb+srv://admin:<db_password>@cluster0.ai4j2du.mongodb.net/?appName=Cluster0')
+mongoose.connect('mongodb+srv://mongodb+srv://admin:<db_ihxvsjB7weVUeF6T>@cluster0.ai4j2du.mongodb.net/?appName=Cluster0')
   .then(() => console.log('Mongo conectado'))
   .catch(err => console.error(err));
 
