@@ -1,4 +1,4 @@
-const express = require('express');
+'Servidoridor express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -47,4 +47,13 @@ app.get('/alunos', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Servidor rodando'));
+app.listen(PORT, () => console.log('Servidor rodanapp.post('/login', (req, res) => {
+  const { user, pass } = req.body;
+
+  if (user === 'admin' && pass === '1234') {
+    return res.json({ ok: true });
+  }
+
+  res.status(401).send('Login inválido');
+});do'));
+
