@@ -29,7 +29,7 @@ index.html
 <ul id="lista"></ul>
 
 <script>
-const API = 'http://localhost:3000';
+const API = 'https://sistema-escola-2njr.onrender.com';
 let token = '';
 
 form.onsubmit = async e => {
