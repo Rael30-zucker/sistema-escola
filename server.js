@@ -1,6 +1,3 @@
-app.get('/', (req, res) => {
-  res.send('Servidor funcionando!');
-});
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
