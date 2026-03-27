@@ -6,8 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔗 Mongo
-mongoose.connect('mongoose.connect('mongodb+srv://admin:40028922@cluster0.ai4j2du.mongodb.net/escola')')
+// 🔗 admin
+mongoose.connect('mongoose.connect('mongodb+srv://admin:ESk9ui8WmUU6fRnD@cluster0.ai4j2du.mongodb.net/escola')')
   .then(() => console.log('Mongo conectado'))
   .catch(err => console.error('Erro Mongo:', err));
 
