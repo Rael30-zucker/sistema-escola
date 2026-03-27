@@ -6,8 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔗 admin
-mongoose.connect('mongoose.connect('mongodb+srv://admin:ESk9ui8WmUU6fRnD@cluster0.ai4j2du.mongodb.net/escola')')
+// 🔗 'mongodbtado'
+mongoose.connect(mongoose.connect('mongodb+srv://admin:SYWFY83uyfrB6LmT@cluster0.ai4j2du.mongodb.net/escola?retryWrites=true&w=majority')TESTESTEtch
   .then(() => console.log('Mongo conectado'))
   .catch(err => console.error('Erro Mongo:', err));
 
