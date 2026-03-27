@@ -7,13 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 // 🔗 'mongodbtado'
-mongoose.connect('mongodb+srv://admin:HUaLAzjvGlvvXfQU@cluster0.ai4j2du.mongodb.net/escola?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:Escola123@cluster0.ai4j2du.mongodb.net/escola?retryWrites=true&w=majority')
   .then(() => console.log('Mongo conectado'))
   .catch(err => console.error('Erro Mongo:', err));
-// ROTA TESTE
-app.get('/', (req, res) => {
-  res.send('Servidor online 🚀');
-});
 
 // MODELO
 const Aluno = mongoose.model('Aluno', {
