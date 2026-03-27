@@ -37,8 +37,12 @@ app.post('/cadastro', async (req, res) => {
 
 // LISTAR
 app.get('/alunos', async (req, res) => {
-  const alunos = await Aluno.find();
-  res.json(alunos);
+  try {
+    const alunos = await Aluno.find();
+    res.json(alunos);
+  } catch (err) {
+    res.status(500).send('Erro ao buscar alunos');
+  }
 });
 
 // 🔐 LOGIN ADM
