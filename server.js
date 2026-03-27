@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🔗 Mongo
-mongoose.connect('mongodb+srv://admin:<db_07092021>@cluster0.ai4j2du.mongodb.net/?appName=Cluster0')
+mongoose.connect('mongoose.connect('mongodb+srv://admin:40028922@cluster0.ai4j2du.mongodb.net/escola')')
   .then(() => console.log('Mongo conectado'))
   .catch(err => console.error('Erro Mongo:', err));
 
