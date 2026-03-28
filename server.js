@@ -44,7 +44,7 @@ app.get('/alunos', async (req, res) => {
 app.post('/login', (req, res) => {
   const { user, pass } = req.body;
 
-  if (user === 'admin' && pass === '1234') {
+  if (user === 'admin' && pass === 'Escola123') {
     return res.json({ ok: true });
   }
 
