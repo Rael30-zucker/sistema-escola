@@ -53,10 +53,8 @@ app.post('/login', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Servidor rodando'));
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
 
-app.post('/cadastro', upload.single('imagem'), async (req, res) => {
+app.post('/cadastro', async (req, res) => {
   try {
     const dados = {
       ...req.body,
