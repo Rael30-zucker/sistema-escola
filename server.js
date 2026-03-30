@@ -5,6 +5,9 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.send('Servidor online 🚀');
+});
 
 // 🔗 'mongodbtado'
 mongoose.connect('mongodb+srv://admin:Escola123@cluster0.ai4j2du.mongodb.net/escola?retryWrites=true&w=majority')
