@@ -55,6 +55,24 @@ app.get('/alunos', async (req, res) => {
 app.post('/login', (req, res) => {
   return res.json({ ok: true }); // liberado pra teste
 });
+// EXCLUIR
+app.delete('/alunos/:id', async (req, res) => {
+  try {
+    await Aluno.findByIdAndDelete(req.params.id);
+    res.send('Deletado');
+  } catch {
+    res.status(500).send('Erro ao deletar');
+  }
+});
 
+// EDITAR
+app.put('/alunos/:id', async (req, res) => {
+  try {
+    await Aluno.findByIdAndUpdate(req.params.id, req.body);
+    res.send('Atualizado');
+  } catch {
+    res.status(500).send('Erro ao atualizar');
+  }
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Servidor rodando'));
