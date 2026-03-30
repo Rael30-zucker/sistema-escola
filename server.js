@@ -45,11 +45,9 @@ app.get('/alunos', async (req, res) => {
 
 // 🔐 LOGIN ADM
 app.post('/login', (req, res) => {
-  const { user, pass } = req.body;
-
-   if (true) {
-    return res.json({ ok: true });
-  }
+  console.log('LOGIN RECEBIDO:', req.body);
+  return res.json({ ok: true });
+});
 
   res.status(401).send('Login inválido');
 });
