@@ -5,11 +5,13 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// TESTE
 app.get('/', (req, res) => {
   res.send('Servidor online 🚀');
 });
 
-// 🔗 'mongodbtado'
+// MONGO
 mongoose.connect('mongodb+srv://admin:Escola123@cluster0.ai4j2du.mongodb.net/escola?retryWrites=true&w=majority')
   .then(() => console.log('Mongo conectado'))
   .catch(err => console.error('Erro Mongo:', err));
@@ -28,7 +30,7 @@ app.post('/cadastro', async (req, res) => {
   try {
     await Aluno.create(req.body);
     res.send('Salvo');
-  } catch {
+  } catch (err) {
     res.status(500).send('Erro ao salvar');
   }
 });
@@ -43,28 +45,10 @@ app.get('/alunos', async (req, res) => {
   }
 });
 
-// 🔐 LOGIN ADM
+// LOGIN
 app.post('/login', (req, res) => {
-  console.log('LOGIN RECEBIDO:', req.body);
-  return res.json({ ok: true });
-});
-
-  res.status(401).send('Login inválido');
+  return res.json({ ok: true }); // liberado pra teste
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Servidor rodando'));
-
-app.post('/cadastro', async (req, res) => {
-  try {
-    const dados = {
-      ...req.body,
-      imagem: req.file ? req.file.filename : ''
-    };
-
-    await Aluno.create(dados);
-    res.send('Salvo');
-  } catch {
-    res.status(500).send('Erro ao salvar');
-  }
-});
