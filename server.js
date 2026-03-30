@@ -21,6 +21,10 @@ const Aluno = mongoose.model('Aluno', {
   nomeAluno: String,
   idadeAluno: Number,
   cpfAluno: String,
+  nomeResponsavel: String,
+  cpfResponsavel: String,
+  telefoneAluno: String,
+  telefoneResponsavel: String,
   instituicao: String,
   turno: String
 });
