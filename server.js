@@ -27,6 +27,8 @@ const Aluno = mongoose.model('Aluno', {
   telefoneResponsavel: String,
   instituicao: String,
   turno: String
+  fotoInstituicao: String,
+  fotoAcademia: String
 });
 
 // CADASTRO
