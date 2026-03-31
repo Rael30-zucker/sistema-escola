@@ -41,7 +41,15 @@ app.post('/cadastro', async (req, res) => {
     res.status(500).send('Erro ao salvar');
   }
 });
-
+const dados = {
+  nomeAluno: req.body.nomeAluno,
+  cpfAluno: req.body.cpfAluno,
+  nomeResponsavel: req.body.nomeResponsavel,
+  cpfResponsavel: req.body.cpfResponsavel,
+  telefoneAluno: req.body.telefoneAluno,
+  telefoneResponsavel: req.body.telefoneResponsavel,
+  turno: req.body.turno
+};
 // LISTAR
 app.get('/alunos', async (req, res) => {
   try {
