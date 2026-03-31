@@ -22,6 +22,7 @@ const Aluno = mongoose.model('Aluno', {
   idadeAluno: Number,
   cpfAluno: String,
   nomeResponsavel: String,
+  idadeResponsavel: Number,
   cpfResponsavel: String,
   telefoneAluno: String,
   telefoneResponsavel: String,
@@ -29,7 +30,7 @@ const Aluno = mongoose.model('Aluno', {
   turno: String, // 👈 vírgula aqui
 
   fotoInstituicao: String,
-  fotoAcademia: String
+  fotoAcademia: String,
 });
 
 // CADASTRO
