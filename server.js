@@ -61,7 +61,15 @@ app.post('/cadastro', async (req, res) => {
     res.status(500).send('Erro ao salvar');
   }
 });
-
+// LISTAR ALUNOS
+app.get('/alunos', async (req, res) => {
+  try {
+    const alunos = await Aluno.find();
+    res.json(alunos);
+  } catch (err) {
+    res.status(500).send('Erro ao buscar alunos');
+  }
+});
 // LOGIN
 app.post('/login', (req, res) => {
   return res.json({ ok: true }); // liberado pra teste
