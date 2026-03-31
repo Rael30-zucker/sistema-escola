@@ -26,7 +26,8 @@ const Aluno = mongoose.model('Aluno', {
   telefoneAluno: String,
   telefoneResponsavel: String,
   instituicao: String,
-  turno: String
+  turno: String, // 👈 vírgula aqui
+
   fotoInstituicao: String,
   fotoAcademia: String
 });
