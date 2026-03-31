@@ -35,28 +35,29 @@ const Aluno = mongoose.model('Aluno', {
 // CADASTRO
 app.post('/cadastro', async (req, res) => {
   try {
-    await Aluno.create(req.body);
+
+    const dados = {
+      nomeAluno: req.body.nomeAluno,
+      idadeAluno: req.body.idadeAluno,
+
+      nomeResponsavel: req.body.nomeResponsavel,
+      idadeResponsavel: req.body.idadeResponsavel,
+
+      cpfAluno: req.body.cpfAluno,
+      cpfResponsavel: req.body.cpfResponsavel,
+      telefoneAluno: req.body.telefoneAluno,
+      telefoneResponsavel: req.body.telefoneResponsavel,
+
+      turno: req.body.turno
+    };
+
+    await Aluno.create(dados);
+
     res.send('Salvo');
+
   } catch (err) {
+    console.log(err);
     res.status(500).send('Erro ao salvar');
-  }
-});
-const dados = {
-  nomeAluno: req.body.nomeAluno,
-  cpfAluno: req.body.cpfAluno,
-  nomeResponsavel: req.body.nomeResponsavel,
-  cpfResponsavel: req.body.cpfResponsavel,
-  telefoneAluno: req.body.telefoneAluno,
-  telefoneResponsavel: req.body.telefoneResponsavel,
-  turno: req.body.turno
-};
-// LISTAR
-app.get('/alunos', async (req, res) => {
-  try {
-    const alunos = await Aluno.find();
-    res.json(alunos);
-  } catch (err) {
-    res.status(500).send('Erro ao buscar alunos');
   }
 });
 
